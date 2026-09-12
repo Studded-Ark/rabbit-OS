@@ -98,7 +98,18 @@ const backgroundNames = [
     "Reflecting_Pool"
 ]
 
-var curBackgroundOption = document.querySelector("#Kingdom_Outskirts")
+const savedBackground = localStorage.getItem("backgroundImage")
+var curBackgroundOption = undefined
+if (savedBackground){
+    document.body.style.backgroundImage = 'url(apps/system/backgrounds/' + savedBackground + '.png)'
+    document.querySelector("#"+ savedBackground).classList.add("selectedapp")
+} else {
+    var randBackground = backgroundNames[Math.floor(Math.random() * backgroundNames.length)]
+    curBackgroundOption = document.querySelector("#"+ randBackground)
+    curBackgroundOption.classList.add("selectedapp")
+    document.body.style.backgroundImage = 'url(apps/system/backgrounds/' + randBackground + '.png)'
+}
+
 for (const backgroundName of backgroundNames){
     document.querySelector("#"+ backgroundName).addEventListener("click", function(){
         if (curBackgroundOption){curBackgroundOption.classList.remove("selectedapp")}
@@ -108,11 +119,13 @@ for (const backgroundName of backgroundNames){
 
         const location = "apps/system/backgrounds/" + backgroundName + ".png"
         document.body.style.backgroundImage = 'url(' + location + ')'
+
+        localStorage.setItem("backgroundImage", backgroundName)
     })
 }
 
 const blurButton = document.querySelector("#blur")
-blurButton.addEventListener("click",function(){
+function blur(){
     if (blurButton.textContent == "Blur: On") {
         blurButton.textContent = "Blur: Off"
 
@@ -126,10 +139,29 @@ blurButton.addEventListener("click",function(){
             div.classList.add("blur")
         }
     }
-})
+    localStorage.setItem("blur", blurButton.textContent)
+}
+blurButton.addEventListener("click",blur)
+if (localStorage.getItem("blur")){
+    if (localStorage.getItem("blur") == "Blur: On"){
+        blurButton.textContent = "Blur: On"
+        for (const div of document.body.children){
+            div.classList.add("blur")
+        }
+    } else {
+        blurButton.textContent = "Blur: Off"
+        for (const div of document.body.children){
+            div.classList.remove("blur")
+        }
+    }
+} else {
+    for (const div of document.body.children){
+            div.classList.add("blur")
+    }
+}
 
 const shadowButton = document.querySelector("#dropshadow")
-shadowButton.addEventListener("click",function(){
+function shadow(){
     if (shadowButton.textContent == "Drop Shadow: On") {
         shadowButton.textContent = "Drop Shadow: Off"
 
@@ -143,7 +175,26 @@ shadowButton.addEventListener("click",function(){
             div.classList.add("dropshadow")
         }
     }
-})
+    localStorage.setItem("shadow", shadowButton.textContent)
+}
+shadowButton.addEventListener("click",shadow)
+if (localStorage.getItem("shadow")){
+    if (localStorage.getItem("shadow") == "Drop Shadow: On"){
+        shadowButton.textContent = "Drop Shadow: On"
+        for (const div of document.body.children){
+            div.classList.add("dropshadow")
+        }
+    } else {
+        shadowButton.textContent = "Drop Shadow: Off"
+        for (const div of document.body.children){
+            div.classList.remove("dropshadow")
+        }
+    }
+} else {
+    for (const div of document.body.children){
+            div.classList.add("shadow")
+    }
+}
 
 // Z-Index stuff
 var highestIndex = 0

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <body style = "background-color: black; background-image: url(apps/system/backgrounds/Kingdom_Outskirts.png); background-size:cover; height:100vh; margin: 0px; overflow: hidden;
+    <body style = "background-color: black; background-size:cover; height:100vh; margin: 0px; overflow: hidden;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: white">
         <!--TOP BAR-->
-        <div id = "topbar" class = "blur dropshadow" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
+        <div id = "topbar" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.5);">
             <div id = "landingopen"  style = "cursor: pointer; display:flex; justify-content: center; flex-direction: row;">
                 <img src = "apps/welcome/Area_Moonlit_Pinnacle.png" style = "height:50%; transform: translateY(50%)">
@@ -24,7 +24,7 @@
             </div>
         </div>
         <!--APP BAR-->
-        <div id = "appbar" class = "blur dropshadow" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 16px;
+        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 16px;
         display:flex; justify-content: center; flex-direction: row; text-align: center; margin-bottom: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.5); width:fit-content; transform: translateX(calc(50vw - 50%));">
             <!--WIKI-->
@@ -39,7 +39,7 @@
             </div>
         </div>
          <!--LANDING-->
-        <div class = "window blur dropshadow" id = "landing" style = "width: 500px; height: 350px;">
+        <div class = "window" id = "landing" style = "width: 500px; height: 350px;">
             <div class = "windowtopbar" id = "landingtopbar">
                 <p class = "windowname">Welcome</p>
                 <p class = "closebutton" id = "landingclose" >X</p>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <!--WIKI-->
-        <div class = "window blur dropshadow" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); display: none;">
+        <div class = "window" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); min-width: 500px; min-height: 300px; display: none;">
             <div class = "windowtopbar" id = "wikitopbar">
                 <div style="display:flex; flex-direction:row; justify-content: space-between;">
                     <img src="apps/wiki/Trinket_Floof_ball.png" style="height: fit-content;">
@@ -74,7 +74,7 @@
             <iframe src="https://rabbitandsteel.fandom.com/wiki/Rabbit_and_Steel_Wiki" style="width:100%; height:calc(100% - 48px)"></iframe>
         </div>
         <!--SYSTEM-->
-        <div class = "window blur dropshadow" id = "system" style = "width: calc(50% - 100px); height: calc(75% - 100px); display: none;">
+        <div class = "window" id = "system" style = "width: calc(50% - 100px); height: calc(75% - 100px); min-width: 825px; min-height: 600px;  display: none;">
             <div class = "windowtopbar" id = "systemtopbar">
                 <div style="display:flex; flex-direction:row; justify-content: space-between;">
                     <img src="apps/system/Gear-icon.png" style="height: fit-content;">
@@ -84,7 +84,7 @@
             </div>
             <h3 style = "margin-left: 16px;">Background</h3>
             <div style = "margin-left: 16px; margin-right: 16px; display: block;">
-                <img class = "selectedapp" id = "Kingdom_Outskirts" src = "apps/system/background-icons/Kingdom_Outskirts.png" style = "cursor: pointer">
+                <img id = "Kingdom_Outskirts" src = "apps/system/background-icons/Kingdom_Outskirts.png" style = "cursor: pointer">
                 <img id = "Scholars_Nest" src = "apps/system/background-icons/Scholars_Nest.png" style = "cursor: pointer">
                 <img id = "Kings_Arsenal" src = "apps/system/background-icons/Kings_Arsenal.png" style = "cursor: pointer">
                 <img id = "Red_Darkhouse" src = "apps/system/background-icons/Red_Darkhouse.png" style = "cursor: pointer">
