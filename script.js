@@ -104,7 +104,7 @@ blurButton.addEventListener("click",function(){
     } else {
         blurButton.textContent = "Blur: On"
 
-        for (const div of document.children){
+        for (const div of document.body.children){
             div.classList.add("blur")
         }
     }
