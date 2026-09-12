@@ -7,7 +7,6 @@
     border: solid;
     border-radius: 8px;
     border-color: white;
-    filter: drop-shadow(0 0 8px black);
     min-width: 250px;
     min-height: 150px;
 }
@@ -16,11 +15,15 @@
     backdrop-filter: blur(8px);
 }
 
+.dropshadow{
+    filter: drop-shadow(0 0 8px black);
+}
+
 .windowtopbar{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.1);
     height:48px;
 }
 
@@ -46,5 +49,6 @@
 .selectedapp{
     background-color: rgba(255,255,255,0.15); 
     border-radius: 8px;
-    border-color:white;
+
+    transition: background-color ease-in-out 0.2s;
 }

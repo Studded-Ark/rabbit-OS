@@ -86,8 +86,14 @@ const backgroundNames = [
     "Crack_In_The_Geode"
 ]
 
+var curBackgroundOption = document.querySelector("#Kingdom_Outskirts")
 for (const backgroundName of backgroundNames){
     document.querySelector("#"+ backgroundName).addEventListener("click", function(){
+        if (curBackgroundOption){curBackgroundOption.classList.remove("selectedapp")}
+
+        curBackgroundOption = document.querySelector("#"+ backgroundName)
+        curBackgroundOption.classList.add("selectedapp")
+
         const location = "apps/system/backgrounds/" + backgroundName + ".png"
         document.body.style.backgroundImage = 'url(' + location + ')'
     })
@@ -106,6 +112,23 @@ blurButton.addEventListener("click",function(){
 
         for (const div of document.body.children){
             div.classList.add("blur")
+        }
+    }
+})
+
+const shadowButton = document.querySelector("#dropshadow")
+shadowButton.addEventListener("click",function(){
+    if (shadowButton.textContent == "Drop Shadow: On") {
+        shadowButton.textContent = "Drop Shadow: Off"
+
+        for (const div of document.body.children){
+            div.classList.remove("dropshadow")
+        }
+    } else {
+        shadowButton.textContent = "Drop Shadow: On"
+
+        for (const div of document.body.children){
+            div.classList.add("dropshadow")
         }
     }
 })

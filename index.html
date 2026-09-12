@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <body style = "background-image: url(apps/system/backgrounds/Kingdom_Outskirts.png); background-size:cover; height:100vh; margin: 0px; overflow: hidden;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white;">
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: white">
         <!--TOP BAR-->
-        <div id = "topbar" class = "blur" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
-        background-color: rgba(0,0,0,0.66);">
+        <div id = "topbar" class = "blur dropshadow" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
+        background-color: rgba(0,0,0,0.5);">
             <div id = "landingopen"  style = "cursor: pointer; display:flex; justify-content: center; flex-direction: row;">
                 <img src = "apps/welcome/Area_Moonlit_Pinnacle.png" style = "height:50%; transform: translateY(50%)">
                 <h3 style = "margin-top: 24px">
@@ -24,9 +24,9 @@
             </div>
         </div>
         <!--APP BAR-->
-        <div id = "appbar" class = "blur" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 24px;
+        <div id = "appbar" class = "blur dropshadow" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 24px;
         display:flex; justify-content: center; flex-direction: row; text-align: center; margin: 16px; border-radius: 16px;
-        background-color: rgba(0,0,0,0.66);">
+        background-color: rgba(0,0,0,0.5);">
             <!--WIKI-->
             <div>
                 <img src = "apps/wiki/Trinket_Floof_ball.png" id = "wikiopen" class = "app">
@@ -39,27 +39,31 @@
             </div>
         </div>
          <!--LANDING-->
-        <div class = "window blur" id = "landing" style = "width: 500px; height:270px">
+        <div class = "window blur dropshadow" id = "landing" style = "width: 500px; height: 350px;">
             <div class = "windowtopbar" id = "landingtopbar">
                 <p class = "windowname">Welcome</p>
                 <p class = "closebutton" id = "landingclose" >X</p>
             </div>
-            <h1 style = "margin-left: 16px">
-                rabbitOS
-            </h1>
-            <h3 style = "margin-left: 16px">
-                STEEL YOURSELF!
-            </h3>
-            <p style = "margin-left: 16px">
-                A <a href="https://store.steampowered.com/app/2132850/Rabbit_and_Steel/" style = "color: rgb(135, 44, 255)">Rabbit and Steel</a> themed WebOS.
-            </p>
-            <p style = "margin-left: 16px; margin-right: 40%">
-                Rabbit and Steel is a roguelike/bullet hell game made by mino_dev.
-            </p>
-            <img src = "apps/welcome/asha.png" style = "height: 75%; transform: translate(140%,-100%)"></img>
+            <div style = "display: flex; justify-content: space-between;">
+                <div>
+                    <h1 style = "margin-left: 16px; margin-right: -32px">
+                        rabbitOS
+                    </h1>
+                    <h3 style = "margin-left: 16px; margin-right: -32px">
+                        STEEL YOURSELF!
+                    </h3>
+                    <p style = "margin-left: 16px; margin-right: -32px">
+                        A <a href="https://store.steampowered.com/app/2132850/Rabbit_and_Steel/" style = "color: rgb(44, 128, 255)">Rabbit and Steel</a> themed WebOS.
+                    </p>
+                    <p style = "margin-left: 16px; margin-right: -32px">
+                        Rabbit and Steel is a roguelike/bullet hell game made by mino_dev.
+                    </p>
+                </div>
+                <img src = "apps/welcome/asha.png" style = "height:300px;"></img>
+            </div>
         </div>
         <!--WIKI-->
-        <div class = "window blur" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); display: none;">
+        <div class = "window blur dropshadow" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); display: none;">
             <div class = "windowtopbar" id = "wikitopbar">
                 <div style="display:flex; flex-direction:row; justify-content: space-between;">
                     <img src="apps/wiki/Trinket_Floof_ball.png" style="height: fit-content;">
@@ -70,7 +74,7 @@
             <iframe src="https://rabbitandsteel.fandom.com/wiki/Rabbit_and_Steel_Wiki" style="width:100%; height:calc(100% - 48px)"></iframe>
         </div>
         <!--SYSTEM-->
-        <div class = "window blur" id = "system" style = "width: calc(75% - 100px); height: calc(75% - 100px); display: none;">
+        <div class = "window blur dropshadow" id = "system" style = "width: calc(50% - 100px); height: calc(75% - 100px); display: none;">
             <div class = "windowtopbar" id = "systemtopbar">
                 <div style="display:flex; flex-direction:row; justify-content: space-between;">
                     <img src="apps/system/Gear-icon.png" style="height: fit-content;">
@@ -80,12 +84,15 @@
             </div>
             <h3 style = "margin-left: 16px;">Background</h3>
             <div style = "margin-left: 16px; margin-right: 16px; display: block;">
-                <img id = "Kingdom_Outskirts" src = "apps/system/background-icons/Kingdom_Outskirts.png" style = "cursor: pointer">
+                <img class = "selectedapp" id = "Kingdom_Outskirts" src = "apps/system/background-icons/Kingdom_Outskirts.png" style = "cursor: pointer">
                 <img id = "Crack_In_The_Geode" src = "apps/system/background-icons/Crack_In_The_Geode.png" style = "cursor: pointer">
             </div>
             <h3 style = "margin-left: 16px;">Settings</h3>
             <div style = "margin-left: 16px; margin-right: 16px; display: block;">
                 <p id="blur" style = "cursor: pointer">Blur: On</p>
+            </div>
+            <div style = "margin-left: 16px; margin-right: 16px; display: block;">
+                <p id="dropshadow" style = "cursor: pointer">Drop Shadow: On</p>
             </div>
         </div>
 
