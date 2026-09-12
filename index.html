@@ -4,8 +4,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
         <!--TOP BAR-->
         <div id = "topbar" style = "display:flex; justify-content:space-between;
-        background-color: rgba(0,0,0,0.5); backdrop-filter: blur(8px);">
-            <h3 style = "color: white; margin-left: 16px">
+        background-color: rgba(0,0,0,0.66); backdrop-filter: blur(8px);">
+            <h3 id = "landingopen" style = "cursor: pointer; color: white; margin-left: 16px">
                 rabbitOS
             </h3>
             <h3 style = "color: white; margin-left: 16px">
@@ -16,23 +16,24 @@
             </h3>
         </div>
          <!--LANDING-->
-        <div id = "landing" style = "background: url(landing.png); background-size:contain;
+        <div id = "landing" style = "background-color: rgba(0, 0, 0, .66); backdrop-filter: blur(8px);
         position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
-        border: solid; border-radius: 16px; width: 500px; height:270px">
-            <div id = "landingtopbar" style = "display:flex; justify-content:space-between;
-            background-color: rgba(0,0,0,0.5); border-radius: 12px; backdrop-filter: blur(8px);">
+        border: solid; border-radius: 8px; border-color: white; width: 500px; height:270px">
+            <div id = "landingtopbar" style = "display:flex; justify-content:space-between; flex-direction: row;
+            border: solid; border-color: white">
                 <p style = "color: white; margin-left: 16px">Welcome</p>
+                <p id = "landingclose" style = "cursor: pointer; color: white; margin-right: 16px">X</p>
             </div>
-
-            <h1 style = "margin-left: 16px">
+            <h1 style = "color: white; margin-left: 16px">
                 rabbitOS
             </h1>
-            <h3 style = "margin-left: 16px">
-                Steel Yourself!
+            <h3 style = "color: white;margin-left: 16px">
+                STEEL YOURSELF!
             </h3>
-            <p style = "margin-left: 16px">
+            <p style = "color: white; margin-left: 16px">
                 A <a href="https://store.steampowered.com/app/2132850/Rabbit_and_Steel/" style = "color: rgb(135, 44, 255)">Rabbit and Steel</a> themed OS.
             </p>
+            <img src = "asha.png" style = "height: 75%; transform: translate(140%,-75%)"></img>
         </div>
         <script src = "script.js"></script>
     </body>

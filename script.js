@@ -6,7 +6,7 @@ function getTime(){
 getTime()
 setInterval(getTime, 1000);
 
-// Window Functionality
+// Window Drag Functionality
 dragWindow(document.getElementById("landing"))
 
 function dragWindow(windowElement){
@@ -50,3 +50,20 @@ function dragWindow(windowElement){
         document.onmousemove = null;
     }
 }
+
+// Window Minimizing/Opening
+function closeWindow(windowElement){
+    windowElement.style.display = "none"
+};
+
+function openWindow(windowElement){
+    windowElement.style.display = "block"
+};
+
+document.querySelector("#landingclose").addEventListener("click", function(){
+    closeWindow(document.querySelector("#landing"))
+});
+
+document.querySelector("#landingopen").addEventListener("click", function(){
+    openWindow(document.querySelector("#landing"))
+});
