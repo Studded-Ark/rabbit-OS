@@ -80,6 +80,36 @@ function openable(windowName){
     });
 }
 
+// Settings stuff
+const backgroundNames = [
+    "Kingdom_Outskirts",
+    "Crack_In_The_Geode"
+]
+
+for (const backgroundName of backgroundNames){
+    document.querySelector("#"+ backgroundName).addEventListener("click", function(){
+        const location = "apps/system/backgrounds/" + backgroundName + ".png"
+        document.body.style.backgroundImage = 'url(' + location + ')'
+    })
+}
+
+const blurButton = document.querySelector("#blur")
+blurButton.addEventListener("click",function(){
+    if (blurButton.textContent == "Blur: On") {
+        blurButton.textContent = "Blur: Off"
+
+        for (const div of document.body.children){
+            div.classList.remove("blur")
+        }
+    } else {
+        blurButton.textContent = "Blur: On"
+
+        for (const div of document.children){
+            div.classList.add("blur")
+        }
+    }
+})
+
 // Z-Index stuff
 var highestIndex = 0
 
@@ -87,7 +117,6 @@ function addWindowRiseHandling(windowElement){
     windowElement.addEventListener("mousedown", function(){
         highestIndex++;
         windowElement.style.zIndex = highestIndex
-
     })
 }
 
@@ -113,3 +142,4 @@ function initWindow(windowName){
 
 initWindow("landing")
 initWindow("wiki")
+initWindow("system")

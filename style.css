@@ -1,6 +1,5 @@
 .window{
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11,6 +10,10 @@
     filter: drop-shadow(0 0 8px black);
     min-width: 250px;
     min-height: 150px;
+}
+
+.blur{
+    backdrop-filter: blur(8px);
 }
 
 .windowtopbar{
@@ -42,7 +45,6 @@
 
 .selectedapp{
     background-color: rgba(255,255,255,0.15); 
-    
     border-radius: 8px;
     border-color:white;
 }
