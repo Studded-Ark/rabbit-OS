@@ -24,9 +24,14 @@
             </div>
         </div>
         <!--APP BAR-->
-        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 16px;
+        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 8px;
         display:flex; justify-content: center; flex-direction: row; text-align: center; margin-bottom: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.5); width:fit-content; transform: translateX(calc(50vw - 50%));">
+            <!--MUSIC PLAYER-->
+            <div>
+                <img src = "apps/musicplayer/Sapphire_Violin.png" id = "musicopen" class = "app">
+                <p>Music</p>
+            </div>
             <!--WIKI-->
             <div>
                 <img src = "apps/wiki/Trinket_Floof_ball.png" id = "wikiopen" class = "app">
@@ -38,6 +43,7 @@
                 <p>System</p>
             </div>
         </div>
+
          <!--LANDING-->
         <div class = "window" id = "landing" style = "width: 500px; height: 350px;">
             <div class = "windowtopbar" id = "landingtopbar">
@@ -61,6 +67,17 @@
                 </div>
                 <img src = "apps/welcome/asha.png" style = "height:300px;"></img>
             </div>
+        </div>
+        <!--MUSIC PLAYER-->
+        <div class = "window" id = "music" style = "width: 600px; height: calc(20% - 100px); min-height: 400px; display: none;">
+            <div class = "windowtopbar" id = "musictopbar">
+                <div style="display:flex; flex-direction:row; justify-content: space-between;">
+                    <img src="apps/musicplayer/Sapphire_Violin.png" style="">
+                    <p class = "windowname">Music Player</p>
+                </div>
+                <p class = "closebutton" id = "musicclose" >X</p>
+            </div>
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5F79oKOKyLAEJxwEOpNX6e?utm_source=generator&si=1f87031825f44cfb" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <!--WIKI-->
         <div class = "window" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); min-width: 500px; min-height: 300px; display: none;">

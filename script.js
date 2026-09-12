@@ -192,7 +192,7 @@ if (localStorage.getItem("shadow")){
     }
 } else {
     for (const div of document.body.children){
-            div.classList.add("shadow")
+            div.classList.add("dropshadow")
     }
 }
 
@@ -229,3 +229,4 @@ function initWindow(windowName){
 initWindow("landing")
 initWindow("wiki")
 initWindow("system")
+initWindow("music")
