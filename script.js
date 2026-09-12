@@ -102,7 +102,8 @@ const savedBackground = localStorage.getItem("backgroundImage")
 var curBackgroundOption = undefined
 if (savedBackground){
     document.body.style.backgroundImage = 'url(apps/system/backgrounds/' + savedBackground + '.png)'
-    document.querySelector("#"+ savedBackground).classList.add("selectedapp")
+    curBackgroundOption = document.querySelector("#"+ savedBackground)
+    curBackgroundOption.classList.add("selectedapp")
 } else {
     var randBackground = backgroundNames[Math.floor(Math.random() * backgroundNames.length)]
     curBackgroundOption = document.querySelector("#"+ randBackground)
