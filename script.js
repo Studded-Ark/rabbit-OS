@@ -7,14 +7,15 @@ getTime()
 setInterval(getTime, 1000);
 
 // Window Drag Functionality
-function dragWindow(windowElement){
+function dragWindow(windowName){
     var initX = 0;
     var initY = 0;
     var curX = 0;
     var curY = 0;
-
-    if (document.getElementById(windowElement + "topbar")){
-        document.getElementById(windowElement + "topbar").onmousedown = startDragging;
+    var windowElement = document.getElementById(windowName)
+    
+    if (document.getElementById(windowName + "topbar")){
+        document.getElementById(windowName + "topbar").onmousedown = startDragging;
     } else {
         windowElement.onmousedown = startDragging;
     }
@@ -104,7 +105,7 @@ function deselectApp(appElement){
 
 // init
 function initWindow(windowName){
-    dragWindow(document.getElementById(windowName));
+    dragWindow(windowName);
     openable(windowName);
     addWindowRiseHandling(document.getElementById(windowName))
 }
