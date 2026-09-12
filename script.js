@@ -7,16 +7,14 @@ getTime()
 setInterval(getTime, 1000);
 
 // Window Drag Functionality
-dragWindow(document.getElementById("landing"))
-
 function dragWindow(windowElement){
     var initX = 0;
     var initY = 0;
     var curX = 0;
     var curY = 0;
 
-    if (document.getElementById(windowElement.id + "topbar")){
-        document.getElementById(windowElement.id + "topbar").onmousedown = startDragging;
+    if (document.getElementById(windowElement + "topbar")){
+        document.getElementById(windowElement + "topbar").onmousedown = startDragging;
     } else {
         windowElement.onmousedown = startDragging;
     }
@@ -60,10 +58,56 @@ function openWindow(windowElement){
     windowElement.style.display = "block"
 };
 
-document.querySelector("#landingclose").addEventListener("click", function(){
-    closeWindow(document.querySelector("#landing"))
-});
+function openable(windowName){
+    var windowOpen = document.querySelector("#" + windowName + "open")
+    windowOpen.addEventListener("click", function(){
+        openWindow(document.querySelector("#" + windowName))
+        if (windowOpen.classList.contains("app")){
+            selectApp(windowOpen)
+        }
+        highestIndex++;
+        document.querySelector("#" + windowName).style.zIndex = highestIndex
+    });
 
-document.querySelector("#landingopen").addEventListener("click", function(){
-    openWindow(document.querySelector("#landing"))
-});
+    var windowClose = document.querySelector("#" + windowName + "close")
+    windowClose.addEventListener("click", function(){
+        closeWindow(document.querySelector("#" + windowName))
+        if (windowOpen.classList.contains("selectedapp")){
+            deselectApp(windowOpen)
+        }
+    });
+}
+
+// Z-Index stuff
+var highestIndex = 0
+
+function addWindowRiseHandling(windowElement){
+    windowElement.addEventListener("mousedown", function(){
+        highestIndex++;
+        windowElement.style.zIndex = highestIndex
+
+    })
+}
+
+// Appbar Functionality
+var selectedApp = undefined
+
+function selectApp(appElement){
+    appElement.classList.add("selectedapp")
+    selectedApp = appElement
+}
+
+function deselectApp(appElement){
+    appElement.classList.remove("selectedapp")
+    selectedApp = undefined
+}
+
+// init
+function initWindow(windowName){
+    dragWindow(document.getElementById(windowName));
+    openable(windowName);
+    addWindowRiseHandling(document.getElementById(windowName))
+}
+
+initWindow("landing")
+initWindow("wiki")

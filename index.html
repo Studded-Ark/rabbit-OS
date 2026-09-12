@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <body style = "background: url(ras.png); background-size:cover; height:100vh; margin: 0px;
+    <body style = "background: url(ras.png); background-size:cover; height:100vh; margin: 0px; overflow: hidden;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
         <!--TOP BAR-->
-        <div id = "topbar" style = "display:flex; justify-content:space-between;
+        <div id = "topbar" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.66); backdrop-filter: blur(8px);">
             <h3 id = "landingopen" style = "cursor: pointer; color: white; margin-left: 16px">
                 rabbitOS
@@ -15,19 +15,26 @@
                 Time
             </h3>
         </div>
+        <!--APP BAR-->
+        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 24px;
+        display:flex; justify-content: center; flex-direction: row; text-align: center; margin: 16px; border-radius: 16px;
+        background-color: rgba(0,0,0,0.66); backdrop-filter: blur(8px);">
+            <!--WIKI-->
+            <div>
+                <img src = "Trinket_Floof_ball.png" id = "wikiopen" class = "app">
+                <p style = "color:white">Wiki</p>
+            </div>
+        </div>
          <!--LANDING-->
-        <div id = "landing" style = "background-color: rgba(0, 0, 0, .66); backdrop-filter: blur(8px);
-        position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
-        border: solid; border-radius: 8px; border-color: white; width: 500px; height:270px">
-            <div id = "landingtopbar" style = "display:flex; justify-content:space-between; flex-direction: row;
-            border: solid; border-color: white">
-                <p style = "color: white; margin-left: 16px">Welcome</p>
-                <p id = "landingclose" style = "cursor: pointer; color: white; margin-right: 16px">X</p>
+        <div class = "window" id = "landing" style = "width: 500px; height:270px">
+            <div class = "windowtopbar" id = "landingtopbar">
+                <p class = "windowname">Welcome</p>
+                <p class = "closebutton" id = "landingclose" >X</p>
             </div>
             <h1 style = "color: white; margin-left: 16px">
                 rabbitOS
             </h1>
-            <h3 style = "color: white;margin-left: 16px">
+            <h3 style = "color: white; margin-left: 16px">
                 STEEL YOURSELF!
             </h3>
             <p style = "color: white; margin-left: 16px">
@@ -35,7 +42,20 @@
             </p>
             <img src = "asha.png" style = "height: 75%; transform: translate(140%,-75%)"></img>
         </div>
+        <!--WIKI-->
+        <div class = "window" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); display: none;">
+            <div class = "windowtopbar" id = "wikitopbar">
+                <div style="display:flex; flex-direction:row; justify-content: space-between;">
+                    <img src="Trinket_Floof_ball.png" style="height: fit-content;">
+                    <p class = "windowname">Miraheze Wiki</p>
+                </div>
+                <p class = "closebutton" id = "wikiclose" >X</p>
+            </div>
+            <iframe src="https://rns.miraheze.org/wiki/Main_Page" style="width:100%; height:100%"></iframe>
+        </div>
+
         <script src = "script.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
     </body>
 </html>
 
