@@ -1,6 +1,7 @@
 // Time
 function getTime(){
-    document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();
+    document.querySelector("#timeElementA").innerHTML = new Date().toLocaleTimeString();
+    document.querySelector("#timeElementB").innerHTML = new Date().toLocaleDateString();
 }
 
 getTime()
@@ -13,7 +14,7 @@ function dragWindow(windowName){
     var curX = 0;
     var curY = 0;
     var windowElement = document.getElementById(windowName)
-    
+
     if (document.getElementById(windowName + "topbar")){
         document.getElementById(windowName + "topbar").onmousedown = startDragging;
     } else {

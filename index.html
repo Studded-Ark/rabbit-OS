@@ -5,15 +5,23 @@
         <!--TOP BAR-->
         <div id = "topbar" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.66); backdrop-filter: blur(8px);">
-            <h3 id = "landingopen" style = "cursor: pointer; color: white; margin-left: 16px">
-                rabbitOS
-            </h3>
-            <h3 style = "color: white; margin-left: 16px">
+            <div id = "landingopen"  style = "cursor: pointer; display:flex; justify-content: center; flex-direction: row;">
+                <img src = "Area_Moonlit_Pinnacle.png" style = "height:50%; transform: translateY(50%)">
+                <h3 style = "color: white; margin-top: 24px">
+                    rabbitOS
+                </h3>
+            </div>
+            <h3 style = "color: white; margin-top: 24px">
                 STEEL YOURSELF!
             </h3>
-            <h3 id = "timeElement" style = "color: white; margin-right: 16px">
-                Time
-            </h3>
+            <div>
+                <p id = "timeElementA" style = "color: white; margin-right: 16px ; margin-top: 16px;">
+                    Time
+                </p>
+                <p id = "timeElementB" style = "color: white; margin-right: 16px; margin-top: -16px;">
+                    Date
+                </p>
+            </div>
         </div>
         <!--APP BAR-->
         <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 24px;
@@ -38,9 +46,12 @@
                 STEEL YOURSELF!
             </h3>
             <p style = "color: white; margin-left: 16px">
-                A <a href="https://store.steampowered.com/app/2132850/Rabbit_and_Steel/" style = "color: rgb(135, 44, 255)">Rabbit and Steel</a> themed OS.
+                A <a href="https://store.steampowered.com/app/2132850/Rabbit_and_Steel/" style = "color: rgb(135, 44, 255)">Rabbit and Steel</a> themed WebOS.
             </p>
-            <img src = "asha.png" style = "height: 75%; transform: translate(140%,-75%)"></img>
+            <p style = "color: white; margin-left: 16px; margin-right: 40%">
+                Rabbit and Steel is a roguelike/bullet hell game made by mino_dev.
+            </p>
+            <img src = "asha.png" style = "height: 75%; transform: translate(140%,-100%)"></img>
         </div>
         <!--WIKI-->
         <div class = "window" id = "wiki" style = "width: calc(75% - 100px); height: calc(75% - 100px); display: none;">
