@@ -83,7 +83,19 @@ function openable(windowName){
 // Settings stuff
 const backgroundNames = [
     "Kingdom_Outskirts",
-    "Crack_In_The_Geode"
+    "Scholars_Nest",
+    "Kings_Arsenal",
+    "Red_Darkhouse",
+    "Churchmouse_Streets",
+    "Emerald_Lakeside",
+    "The_Pale_Keep",
+    "Moonlit_Pinnacle",
+    "Crack_In_The_Geode",
+    "Darkhouse_Depths",
+    "Atelier_Aurum",
+    "Subterra_Sanctum",
+    "Looping_Hallway",
+    "Reflecting_Pool"
 ]
 
 var curBackgroundOption = document.querySelector("#Kingdom_Outskirts")
