@@ -123,6 +123,7 @@ startBtn.addEventListener("click", function(){
     startBtn.disabled = true
     pauseBtn.disabled = false
     setBtn.disabled = true
+    document.getElementById("clockwind").play()
 
     timerInterval = setInterval(() => {
         if (timeLeft > 0){
@@ -131,6 +132,7 @@ startBtn.addEventListener("click", function(){
         } else {
             clearInterval(timerInterval)
             timerInterval = undefined
+            document.getElementById("beep").play()
             resetTimer()
         }
     }, 1000)
