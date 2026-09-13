@@ -24,23 +24,28 @@
             </div>
         </div>
         <!--APP BAR-->
-        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 8px;
+        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 8px; height: 96px;
         display:flex; justify-content: center; flex-direction: row; text-align: center; margin-bottom: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.5); width:fit-content; transform: translateX(calc(50vw - 50%));">
+            <!--TIMER-->
+            <div>
+                <img src = "apps/timer/Clockwork_Tome.png" id = "timeropen" class = "app">
+                <p style="transform: translate(0,-24px);">Timer</p>
+            </div>
             <!--MUSIC PLAYER-->
             <div>
                 <img src = "apps/musicplayer/Sapphire_Violin.png" id = "musicopen" class = "app">
-                <p>Music</p>
+                <p style="transform: translate(0,-24px);">Music</p>
             </div>
             <!--WIKI-->
             <div>
                 <img src = "apps/wiki/Trinket_Floof_ball.png" id = "wikiopen" class = "app">
-                <p>Wiki</p>
+                <p style="transform: translate(0,-24px);">Wiki</p>
             </div>
             <!--SYSTEM-->
             <div>
                 <img src = "apps/system/Gear-icon.png" id = "systemopen" class = "app">
-                <p>System</p>
+                <p style="transform: translate(0,-24px);">System</p>
             </div>
         </div>
 
@@ -69,6 +74,50 @@
                     </p>
                 </div>
                 <img src = "apps/welcome/asha.png" style = "height:300px"></img>
+            </div>
+        </div>
+        <!--TIMER-->
+        <div class = "window" id = "timer" style = "width: 900px; height: 700px; display: block;">
+            <div class = "windowtopbar" id = "timertopbar">
+                <div style="display:flex; flex-direction:row; justify-content: space-between;">
+                    <img src="apps/timer/Clockwork_Tome.png">
+                    <p class = "windowname">Timer</p>
+                </div>
+                <p class = "closebutton" id = "timerclose" >X</p>
+            </div>
+            <div style="z-index: 2; display: flex; flex-direction: row; justify-content: center;">
+                <button id="startBtn" class="btn">Start</button>
+                <button id="resetBtn" class="btn">Reset</button>
+                <button id="pauseBtn" class="btn">Pause</button>
+                <button id="timersetopen" class="btn">Set</button>
+            </div>
+            <div style="z-index: 2; display: flex; flex-direction: row; justify-content: center;">
+                <h3 id = "timerdisplay">05:00</h3>
+            </div>
+            <p style = "display: flex; flex-direction: row; justify-content: center; transform: translateY(-32px);">The cosmos spins on my command.</p>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+            <div class = "crow-anim" style = "transform: translateY(-20%);"></div>
+            </div>
+            <img class = "spin-anim" src = "apps/timer/ring.png" style = "position: absolute; z-index: -2; width: 500px; height:auto">
+ 
+        </div>
+        <div class = "window" id = "timerset" style = "width: 250px; height: 300px; display: none">
+            <div class = "windowtopbar" id = "timersettopbar">
+                <p class = "windowname">Set</p>
+                <p class = "closebutton" id = "timersetclose" >X</p>
+            </div>
+            <div style = "display:flex; justify-content: center; flex-direction: row;">
+                <div style = "display:flex; justify-content: center; flex-direction: column;">
+                    <div>
+                        <input class = "field" type="number" id="minuteInput" min="0" max="999" value="5">
+                        <label for = "minuteInput">min</label>
+                    </div>
+                    <div>
+                        <input class = "field" type="number" id="secondsInput" min="0" max="59" value="0">
+                        <label for = "secondsInput">sec</label>
+                    </div>
+                    <button id="setBtn" class="btn">Set</button>
+                </div>
             </div>
         </div>
         <!--MUSIC PLAYER-->

@@ -80,6 +80,74 @@ function openable(windowName){
     });
 }
 
+// Timer
+var setTime = 300
+var timeLeft = 300
+var timerInterval = undefined
+
+const timerDisplay = document.getElementById("timerdisplay")
+const startBtn = document.getElementById("startBtn")
+const resetBtn = document.getElementById("resetBtn")
+const pauseBtn = document.getElementById("pauseBtn")
+
+const minuteInput = document.getElementById("minuteInput")
+const secondsInput = document.getElementById("secondsInput")
+const setBtn = document.getElementById("setBtn")
+
+function updateTimer() {
+    const minutes = Math.floor(timeLeft / 60)
+    const seconds = timeLeft % 60
+
+    const minuteDisplay = String(minutes).padStart(2,'0')
+    const secondDisplay = String(seconds).padStart(2,'0')
+    timerDisplay.textContent = `${minuteDisplay}:${secondDisplay}`
+}
+
+function pauseTimer(){
+    clearInterval(timerInterval)
+    timerInterval = undefined
+    startBtn.disabled = false
+    pauseBtn.disabled = true
+    setBtn.disabled = false
+}
+
+function resetTimer(){
+    pauseTimer();
+    timeLeft = setTime;
+    updateTimer();
+}
+
+startBtn.addEventListener("click", function(){
+    if (timerInterval !== undefined || timeLeft <= 0) return
+
+    startBtn.disabled = true
+    pauseBtn.disabled = false
+    setBtn.disabled = true
+
+    timerInterval = setInterval(() => {
+        if (timeLeft > 0){
+            timeLeft--
+            updateTimer()
+        } else {
+            clearInterval(timerInterval)
+            timerInterval = undefined
+            resetTimer()
+        }
+    }, 1000)
+})
+pauseBtn.addEventListener("click", pauseTimer)
+resetBtn.addEventListener("click", resetTimer)
+setBtn.addEventListener("click", function(){
+    pauseTimer()
+
+    const mins = Math.max(0,minuteInput.value)
+    const secs = Math.max(0,Math.min(59,secondsInput.value))
+
+    setTime = (mins * 60) + secs
+    timeLeft = setTime
+    updateTimer()
+})
+
 // Settings stuff
 const backgroundNames = [
     "Kingdom_Outskirts",
@@ -231,3 +299,5 @@ initWindow("landing")
 initWindow("wiki")
 initWindow("system")
 initWindow("music")
+initWindow("timer")
+initWindow("timerset")

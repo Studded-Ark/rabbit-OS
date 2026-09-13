@@ -53,6 +53,40 @@
     transition: background-color ease-in-out 0.2s;
 }
 
+.btn {
+    background-color: rgba(0,0,0,0.35);
+    color: white;
+    width: 15vh;
+    height: 8vh;
+    border-radius: 8px;
+    border-color: white;
+    font-size:large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    margin: 16px;
+}
+
+.btn:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.field {
+    background-color: rgba(0,0,0,0.35);
+    color: white;
+    width: 8vh;
+    height: 4vh;
+    border-radius: 8px;
+    border-color: white;
+    font-size:large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    margin: 16px;
+}
+
+.field:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
 .music-anim {
     width: 500px;
     height: 500px;
@@ -69,5 +103,37 @@
     }
     to {
         background-position: -1000px 0;
+    }
+}
+
+.crow-anim {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    background-image: url("apps/timer/bird_valedictorian.png");
+    display: block;
+
+    animation: crow-anim 1s steps(2) infinite;
+}
+
+@keyframes crow-anim {
+    from {
+        background-position: 0px 0;
+    }
+    to {
+        background-position: -1000px 0;
+    }
+}
+
+.spin-anim {
+    animation: spin-anim 120s linear infinite;
+}
+
+@keyframes spin-anim {
+    from {
+        transform: translate(calc(450px - 50%), calc(-820px + 50%)) rotate(0deg);
+    }
+    to {
+        transform: translate(calc(450px - 50%), calc(-820px + 50%)) rotate(360deg);
     }
 }
