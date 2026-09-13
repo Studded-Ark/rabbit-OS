@@ -8,6 +8,8 @@ Just like any operating system, this features draggable windows, apps, and some 
 ### Demo Link
 https://kaskadiia.github.io/rabbit-OS/
 
+Alternatively, you can clone the repo and open index.html in your browser.
+
 ### Features
 - Local time and date
 - Timer
