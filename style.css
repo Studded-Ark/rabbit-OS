@@ -1,3 +1,13 @@
+body {
+    background-color: black;
+    background-size:cover;
+    height:100vh;
+    margin: 0px;
+    overflow: hidden;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white
+}
+
 .window{
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -9,44 +19,57 @@
     border-color: white;
     min-width: 250px;
     min-height: 150px;
+    width: 30vw;
+    height: 25vh;
+    overflow: hidden;
+    resize: both;
 }
 
-.blur{
-    backdrop-filter: blur(8px);
-}
-
-.dropshadow{
-    filter: drop-shadow(0 0 8px black);
+.windowcontent{
+    width: 250px;
+    height: auto;
+    overflow: scroll;
+    resize: none;
+    scrollbar-color: rgb(255, 255, 255) rgba(0, 0, 0, 0);
 }
 
 .windowtopbar{
     display: flex;
     justify-content: space-between;
+    font-size: small;
+    align-items: center;;
+    color: white;
     flex-direction: row;
     background-color: rgba(255,255,255,0.1);
-    height:48px;
+    height:32px;
 }
 
 .windowname{
-    color: white;
     margin-left: 16px;
 }
 
 .closebutton{
     cursor: pointer;
-    color: white;
     margin-right: 16px;
 }
 
 .app{
-    width: 64px;
-    height:64px;
+    width: 32px;
+    height: auto;
     margin-left: 16px;
     margin-right: 16px;
+    margin-bottom: 0px;
     cursor: pointer;
+    
+    transition: 0.33s cubic-bezier(0.075, 0.82, 0.165, 1)
 }
 
-.selectedapp{
+.app:hover{
+    width: 40px;
+    margin-bottom: -4px;
+}
+
+.app:active{
     background-color: rgba(255,255,255,0.15); 
     border-radius: 8px;
 
@@ -85,6 +108,16 @@
 
 .field:hover {
     background-color: rgba(0,0,0,0.5);
+}
+
+/*one billion filters, mainly settings*/
+
+.blur{
+    backdrop-filter: blur(8px);
+}
+
+.dropshadow{
+    filter: drop-shadow(0 0 8px black);
 }
 
 .music-anim {

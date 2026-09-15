@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <body style = "background-color: black; background-size:cover; height:100vh; margin: 0px; overflow: hidden;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: white">
+    <body>
         <!--TOP BAR-->
         <div id = "topbar" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.5);">
@@ -24,7 +23,7 @@
             </div>
         </div>
         <!--APP BAR-->
-        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 8px; height: 96px;
+        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 8px; height: 64px;
         display:flex; justify-content: center; flex-direction: row; text-align: center; margin-bottom: 16px; border-radius: 16px;
         background-color: rgba(0,0,0,0.5); width:fit-content; transform: translateX(calc(50vw - 50%));">
             <!--TIMER-->
@@ -50,12 +49,12 @@
         </div>
 
          <!--LANDING-->
-        <div class = "window" id = "landing" style = "width: 500px; height: 380px">
+        <div class = "window" id = "landing">
             <div class = "windowtopbar" id = "landingtopbar">
                 <p class = "windowname">Welcome</p>
                 <p class = "closebutton" id = "landingclose" >X</p>
             </div>
-            <div style = "display: flex; justify-content: space-between; overflow-x: hidden">
+            <div class = "windowcontent" style = "display: flex; justify-content: space-between">
                 <div>
                     <h1 style = "margin-left: 16px; margin-right: -32px">
                         rabbitOS
